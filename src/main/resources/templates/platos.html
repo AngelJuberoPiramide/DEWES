@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurante - Creacion de Platos</title>
+</head>
+<body>
+<h1>Platos del restaurante</h1>
+<form action="/platos/guardar" method="POST">
+    <label>Nombre del plato:</label><br>
+    <input name="nombre" type="text" placeholder="Escribe un nombre" required><br><br>
+    <label>Precio:</label><br>
+    <input name="precio" type="number" placeholder="Escribe un precio" required><br><br>
+    <!--INGREDIENTES:-->
+    <label>Ingredientes:</label><br>
+    <input type="checkbox" name="ingredientes" value="Tomate">
+    <label>Tomate</label><br>
+    <input type="checkbox" name="ingredientes" value="Lechuga">
+    <label>Lechuga</label><br>
+    <input type="checkbox" name="ingredientes" value="Cebolla">
+    <label>Cebolla</label><br>
+    <input type="checkbox" name="ingredientes" value="Queso">
+    <label>Queso</label><br>
+    <input type="checkbox" name="ingredientes" value="Jamón">
+    <label>Jamón</label><br>
+    <input type="checkbox" name="ingredientes" value="Pollo">
+    <label>Pollo</label><br>
+    <input type="checkbox" name="ingredientes" value="Patata">
+    <label>Patata</label><br>
+    <input type="checkbox" name="ingredientes" value="Arroz">
+    <label>Arroz</label><br>
+    <input type="checkbox" name="ingredientes" value="Huevo">
+    <label>Huevo</label><br>
+    <input type="checkbox" name="ingredientes" value="Pepinillos">
+    <label>Pepinillos</label><br>
+    <input type="checkbox" name="ingredientes" value="Champiñones">
+    <label>Champiñones</label><br>
+    <input type="checkbox" name="ingredientes" value="Atún">
+    <label>Atún</label><br><br>
+
+    <label>Tipo de plato:</label>
+    <select name="tipos" required>
+        <option>PRIMERO</option>
+        <option>SEGUNDO</option>
+        <option>POSTRE</option>
+    </select><br><br>
+    <button type="submit">Guardar</button>
+</form>
+</body>
+</html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
