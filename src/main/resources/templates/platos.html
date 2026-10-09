@@ -5,12 +5,16 @@
     <title>Restaurante - Creacion de Platos</title>
 </head>
 <body>
+<a href="/index">Home</a><br>
+<a href="/menu">Ver menú</a><br>
+<a href="/platos">Añadir plato</a>
+
 <h1>Platos del restaurante</h1>
 <form action="/platos/guardar" method="POST">
     <label>Nombre del plato:</label><br>
-    <input name="nombre" type="text" placeholder="Escribe un nombre" required><br><br>
+    <input type="text" name="nombre" placeholder="Escribe un nombre" required><br><br>
     <label>Precio:</label><br>
-    <input name="precio" type="number" placeholder="Escribe un precio" required><br><br>
+    <input type="number" name="precio" placeholder="Escribe un precio" step="0.01" required><br><br>
     <!--INGREDIENTES:-->
     <label>Ingredientes:</label><br>
     <input type="checkbox" name="ingredientes" value="Tomate">
@@ -39,7 +43,7 @@
     <label>Atún</label><br><br>
 
     <label>Tipo de plato:</label>
-    <select name="tipos" required>
+    <select name="tipo" required>
         <option>PRIMERO</option>
         <option>SEGUNDO</option>
         <option>POSTRE</option>
@@ -48,4 +52,3 @@
 </form>
 </body>
 </html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">

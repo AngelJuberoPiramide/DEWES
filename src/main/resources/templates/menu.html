@@ -1,17 +1,19 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Restaurante - Menu</title>
+    <title>Menú del restaurante</title>
 </head>
 <body>
-    <h2>Platos guardados</h2>
+    <a href="/index">Home</a><br>
+    <a href="/menu">Ver menú</a><br>
+    <a href="/platos">Añadir plato</a>
+    <h1>Menú del restaurante</h1>
+    <h2>Platos disponibles</h2>
     <div th:each="plato : ${platos}">
-        <p th:text="${plato.nombre}"></p>
-        <p th:text="${plato.precio}"></p>
-        <p th:text="${plato.tipo}"></p>
+        <h3 th:text="${plato.nombre}"></h3>
+        <p>Precio: <span th:text="${plato.precio}"></span> €</p>
+        <p>Tipo: <span th:text="${plato.tipo}"></span></p>
     </div>
 </body>
 </html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">

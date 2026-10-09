@@ -5,9 +5,9 @@ public class plato {
     private int idPlato;
     private String nombre;
     private double precio;
-    private tipoPlato tipo;
+    private TipoPlato tipo;
 
-    public plato(int idPlato, String nombre, double precio, tipoPlato tipo) {
+    public plato(int idPlato, String nombre, double precio, TipoPlato tipo) {
         this.idPlato = idPlato;
         this.nombre = nombre;
         this.precio = precio;
@@ -38,11 +38,11 @@ public class plato {
         this.precio = precio;
     }
 
-    public tipoPlato getTipo() {
+    public TipoPlato getTipo() {
         return tipo;
     }
 
-    public void setTipo(tipoPlato tipo) {
+    public void setTipo(TipoPlato tipo) {
         this.tipo = tipo;
     }
 
