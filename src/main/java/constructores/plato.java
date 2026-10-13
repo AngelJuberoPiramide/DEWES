@@ -1,4 +1,7 @@
+
 package constructores;
+
+import java.util.List;
 
 public class plato {
 
@@ -6,12 +9,14 @@ public class plato {
     private String nombre;
     private double precio;
     private TipoPlato tipo;
+    private List<String> ingredientes;
 
-    public plato(int idPlato, String nombre, double precio, TipoPlato tipo) {
+    public plato(int idPlato, String nombre, double precio, TipoPlato tipo, List<String> ingredientes) {
         this.idPlato = idPlato;
         this.nombre = nombre;
         this.precio = precio;
         this.tipo = tipo;
+        this.ingredientes = ingredientes;
     }
 
     public int getIdPlato() {
@@ -46,6 +51,14 @@ public class plato {
         this.tipo = tipo;
     }
 
+    public List<String> getIngredientes() {
+        return ingredientes;
+    }
+
+    public void setIngredientes(List<String> ingredientes) {
+        this.ingredientes = ingredientes;
+    }
+
     @Override
     public String toString() {
         return "plato{" +
@@ -53,6 +66,7 @@ public class plato {
                 ", nombre='" + nombre + '\'' +
                 ", precio=" + precio +
                 ", tipo=" + tipo +
+                ", ingredientes=" + ingredientes +
                 '}';
     }
 }

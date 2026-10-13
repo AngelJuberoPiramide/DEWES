@@ -2,18 +2,35 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Menú del restaurante</title>
+    <title>Menu del Restaurante</title>
 </head>
 <body>
-    <a href="/index">Home</a><br>
-    <a href="/menu">Ver menú</a><br>
-    <a href="/platos">Añadir plato</a>
-    <h1>Menú del restaurante</h1>
-    <h2>Platos disponibles</h2>
-    <div th:each="plato : ${platos}">
-        <h3 th:text="${plato.nombre}"></h3>
-        <p>Precio: <span th:text="${plato.precio}"></span> €</p>
-        <p>Tipo: <span th:text="${plato.tipo}"></span></p>
-    </div>
+<a href="/index">Home</a><br>
+<a href="/menu">Ver menú</a><br>
+<a href="/platos">Añadir plato</a>
+
+<h1>Menú del restaurante</h1>
+<h2>Platos disponibles</h2>
+
+<form action="/menu" method="GET">
+    <label>Buscar plato por ingrediente:</label>
+    <input type="text" name="ingrediente" th:value="${ingrediente}">
+    <button type="submit">Buscar</button>
+</form>
+<br>
+<div th:each="plato : ${platos}">
+    <h3 th:text="${plato.nombre}"></h3>
+    <p>Precio: <span th:text="${plato.precio}"></span> €</p>
+    <p>Tipo: <span th:text="${plato.tipo}"></span></p>
+    <p>
+        Ingredientes:
+        <span th:each="ingrediente, iteracion : ${plato.ingredientes}">
+                <span th:text="${ingrediente}"></span><span th:if="${!iteracion.last}">, </span>
+            </span>
+    </p>
+    <button type="button">Ver detalles</button>
+    <button type="button">Editar</button>
+    <button type="button">Eliminar</button>
+</div>
 </body>
 </html>

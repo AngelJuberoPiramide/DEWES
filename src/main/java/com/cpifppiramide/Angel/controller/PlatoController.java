@@ -26,14 +26,24 @@ public class PlatoController {
     public String guardarPlato(
             @RequestParam String nombre,
             @RequestParam double precio,
-            @RequestParam String tipo) {
+            @RequestParam String tipo,
+            @RequestParam(required = false) List<String> ingredientes) {
 
         int id = platos.size() + 1;
 
-        plato nuevoPlato = new plato(id, nombre, precio, TipoPlato.valueOf(tipo));
+        if (ingredientes == null) {
+            ingredientes = new ArrayList<>();
+        }
+
+        plato nuevoPlato = new plato(
+                id,
+                nombre,
+                precio,
+                TipoPlato.valueOf(tipo),
+                ingredientes
+        );
 
         platos.add(nuevoPlato);
-
         return "redirect:/platos";
     }
 }

@@ -1,7 +1,7 @@
 package constructores;
 
-    public enum TipoPlato {
-        PRIMERO,
-        SEGUNDO,
-        POSTRE
-    }
+public enum TipoPlato {
+    PRIMERO,
+    SEGUNDO,
+    POSTRE
+}
